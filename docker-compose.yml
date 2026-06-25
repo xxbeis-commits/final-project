@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  # 第一个应用：你的个人介绍网站
+  personal-website:
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
+    container_name: personal-website
+
+  # 第二个应用：Todo 待办应用
+  todo-app:
+    build: ./todo-app
+    ports:
+      - "8081:80"
+    restart: always
+    container_name: todo-app
